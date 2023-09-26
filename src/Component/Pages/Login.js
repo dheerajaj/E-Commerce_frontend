@@ -23,7 +23,7 @@ function Login() {
     console.log('Form submitted:', formData);
   
     try {
-      const response = await fetch('http://192.168.68.23:8080/login', {
+      const response = await fetch('http://192.168.68.44:8080/api/login', {
         method: 'POST',
         body: JSON.stringify(formData),
         headers: {

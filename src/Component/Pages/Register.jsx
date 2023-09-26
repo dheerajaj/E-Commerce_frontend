@@ -28,7 +28,7 @@ function Register() {
     console.log('Form submitted:', formData);
 
     try {
-      const response = await fetch('http://192.168.1.18:8080/signup', {
+      const response = await fetch('http://192.168.68.44:8080/api/signup', {
         method: 'POST',
         body: JSON.stringify(formData),
         headers: {
