@@ -5,10 +5,9 @@ import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
+
 import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
+
 import MenuOpenIcon from '@mui/icons-material/MenuOpen';
 
 export default function Sidebar() {
@@ -33,26 +32,39 @@ export default function Sidebar() {
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
+    <List>
+    <h2>Hello</h2></List>
+    <Divider></Divider>
       <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+      <h5>Trending</h5>
+        {['Best Seller', 'New Release'].map((text, index) => (
           <ListItem key={text} disablePadding>
             <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
+            
               <ListItemText primary={text} />
             </ListItemButton>
           </ListItem>
         ))}
       </List>
-      <Divider />
+<Divider />
       <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
+      <h5>Shop by category</h5>
+      {['Mens Fashion', 'Womens Fashion', 'Electronics/Home Appliances/TV','Mobile Phones/Laptops', 'Beauty/Health/Grocery'].map((text, index) => (
           <ListItem key={text} disablePadding>
             <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
+            
+              <ListItemText primary={text} />
+            </ListItemButton>
+          </ListItem>
+      ))}
+      </List>
+      <Divider />
+      <List>
+      <h5>Help & Setting</h5>
+        {['Your Account', 'Customer Service'].map((text, index) => (
+          <ListItem key={text} disablePadding>
+            <ListItemButton>
+              
               <ListItemText primary={text} />
             </ListItemButton>
           </ListItem>

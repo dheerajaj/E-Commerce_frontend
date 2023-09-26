@@ -2,12 +2,19 @@ import React from 'react'
 import './Dashboard.css';
 import Navbar from '../Navigation/Navbar';
 
+import Cards from './Card';
+
 function Dashboard() {
   return (
+    <>
     <div>
   <Navbar></Navbar> 
-            <img className='logo-d' src='logo.png' alt='logo'></img>
+           
     </div>
+    <div>
+    <Cards></Cards>
+    </div>
+    </>
   )
 }
 

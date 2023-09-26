@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 import './Register.css';
+import TextField from '@mui/material/TextField';
+import Breadcrumbs from '@mui/material/Breadcrumbs';
+import Link from '@mui/material/Link';
+import Logo from '../images/reglogo.png';
 
 function Register() {
   const [formData, setFormData] = useState({
@@ -7,7 +11,7 @@ function Register() {
     lastName: '',
     email: '',
     password: '',
-    roleType: '', 
+    roleType: '',
   });
 
   const handleChange = (e) => {
@@ -43,58 +47,82 @@ function Register() {
     }
   };
 
+
+
+
   return (
     <div className='reg'>
+      <div className='header'>
+        <img src='logo.png' alt='' className='logooo'></img>
+        <h2 className='he-n'>E-cart</h2>
+      </div>
+      <div className='nav-he' role="presentation" >
+        <Breadcrumbs aria-label="breadcrumb">
+          <Link underline="hover" color="inherit" href="/">
+            Home
+          </Link>
+          <Link underline="hover" color="inherit" href="" >
+            Register
+          </Link>
+        </Breadcrumbs>
+      </div>
+
       <div className="registration">
+      <img src={Logo} alt='' className='logooo' ></img>
         <h2>Registration</h2>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
-            <label htmlFor="firstname">First Name</label>
-            <input
-              className='in-field'
+
+            <TextField
               type="text"
               id="firstname"
               name="firstName"
               value={formData.firstName}
+              multiline
+              maxRows={4}
               onChange={handleChange}
               required
-            />
+              label='First Name'></TextField>
           </div>
           <div className='form-group'>
-            <label htmlFor="lastname">Last Name</label>
-            <input
-              className='in-field'
+           
+            <TextField
+              multiline
+              maxRows={4}
               type="text"
               id="lastname"
               name="lastName"
               value={formData.lastName}
               onChange={handleChange}
               required
-            />
+              label='Last Name'></TextField>
           </div>
           <div className="form-group">
-            <label htmlFor="email">Email</label>
-            <input
-              className='in-field'
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
+           
+            <TextField
+            multiline
+            maxRows={4}
+            type="email"
+            id="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+            label='E-mail'></TextField>
           </div>
           <div className="form-group">
-            <label htmlFor="password">Password</label>
-            <input
-              className='in-field'
-              type="password"
-              id="password"
-              name="password"
-              value={formData.password}
-              onChange={handleChange}
-              required
-            />
+           
+            <TextField
+            multiline
+            maxRows={4}
+            type="password"
+            id="password"
+            name="password"
+            value={formData.password}
+            onChange={handleChange}
+            required
+            label='Password'></TextField>
+            
           </div>
           <div className="form-group">
             <label htmlFor="roletype">Role Type</label>
@@ -106,7 +134,7 @@ function Register() {
               onChange={handleChange}
               required
             >
-            <option>Select</option>
+              <option>Select</option>
               <option value={1}>Buyer</option>
               <option value={2}>Seller</option>
             </select>

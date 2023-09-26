@@ -54,6 +54,7 @@ label {
   cursor: pointer;
   width: 100px;
   transition: background-color 0.3s ease;
+  margin-left: 140px;
 }
 
 .log-b:hover {
@@ -66,12 +67,16 @@ label {
   text-decoration: none;
   color: #007bff;
   transition: color 0.3s ease;
+  
 }
 
 .reguser:hover {
-  color: #0056b3;
+  color: red;
 }
 
+.loglogo{
+  height: 80px;
+}
 @media (max-width: 768px) {
   .log-div {
     max-width: 100%;
@@ -79,9 +84,7 @@ label {
 }
 
 /*App Bar */
-.log-o{
 
-}
 .navv{
   height: 80px;
   background-color: #007bff;

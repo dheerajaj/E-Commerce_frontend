@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './login.css'
 import { Link } from 'react-router-dom';
 import TextField from '@mui/material/TextField';
+import Logo from '../images/loginlogo.png';
 
 function Login() {
   const [formData, setFormData] = useState({   
@@ -44,7 +45,8 @@ function Login() {
 
   return (
     <div className='log-div'>
-      <h2>Login page</h2>
+    <img src={Logo} alt='' className='loglogo'></img>
+      <h2>Log-In</h2>
       <form className='log-form' onSubmit={handleSubmit}>
        
         <div className="form-group">
@@ -56,7 +58,6 @@ function Login() {
           multiline
           maxRows={4}
           type="email"
-          
           name="email"
           value={formData.email}
           onChange={handleChange}
@@ -71,11 +72,10 @@ function Login() {
           multiline
           maxRows={4}
           type="password"
-            
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-            required
+          name="password"
+          value={formData.password}
+          onChange={handleChange}
+          required
         />
         </div>
         <button className='log-b' type="submit">Login</button>
